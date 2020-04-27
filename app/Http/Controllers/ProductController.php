@@ -48,6 +48,12 @@ class ProductController extends Controller
         return response()->json($product);
     }
 
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        return response()->json($product);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -59,7 +65,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->title = $request->get('title');
-        $product->title = $request->get('body');
+        $product->body = $request->get('body');
         $product->save();
 
         return response()->json('Product Updated Successfully.');
