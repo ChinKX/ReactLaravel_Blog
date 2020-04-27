@@ -61576,7 +61576,7 @@ var DisplayProduct = function (_Component) {
     value: function tabRows() {
       if (this.state.products instanceof Array) {
         return this.state.products.map(function (object, i) {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TableRow__["a" /* default */], { obj: object });
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TableRow__["a" /* default */], { obj: object, key: i });
         });
       }
     }

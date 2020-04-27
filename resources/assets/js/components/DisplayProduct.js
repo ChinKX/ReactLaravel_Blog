@@ -23,7 +23,7 @@ class DisplayProduct extends Component {
   tabRows(){
     if(this.state.products instanceof Array){
       return this.state.products.map(function(object, i){
-        return <TableRow obj={object}/>;
+        return <TableRow obj={object} key={i}/>;
       })
     }
   }
