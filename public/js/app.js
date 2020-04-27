@@ -61556,7 +61556,7 @@ var DisplayProduct = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (DisplayProduct.__proto__ || Object.getPrototypeOf(DisplayProduct)).call(this, props));
 
-    _this.state = { value: '', products: '' };
+    _this.state = { products: '' };
     return _this;
   }
 
@@ -61692,8 +61692,14 @@ var TableRow = function (_Component) {
       event.preventDefault();
       var uri = __WEBPACK_IMPORTED_MODULE_2__MyGlobleSetting__["a" /* default */].url + ('/api/products/' + this.props.obj.id);
       axios.delete(uri).then(function (response) {
+        /*
+          1. History Push The user can go forward and backward in the browser and the url will change.
+            It works like a programmatic link with no affect on current url.
+            2. Location Replace The link of the page is set to the new one, but the user can't go between the replaced.
+        */
         __WEBPACK_IMPORTED_MODULE_1_react_router__["browserHistory"].push('/empty');
-        __WEBPACK_IMPORTED_MODULE_1_react_router__["browserHistory"].push('/display-item');
+        // browserHistory.push('/display-item');//!
+        __WEBPACK_IMPORTED_MODULE_1_react_router__["browserHistory"].replace('/display-item');
       });
     }
   }, {

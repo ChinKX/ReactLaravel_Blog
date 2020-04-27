@@ -7,7 +7,7 @@ import MyGlobleSetting from './MyGlobleSetting';
 class DisplayProduct extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: '', products: ''};
+    this.state = {products: ''};
   }
 
   componentDidMount(){
